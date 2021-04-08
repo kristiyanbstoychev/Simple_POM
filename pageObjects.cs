@@ -5,12 +5,25 @@ using System.Text;
 
 namespace AutomationPractice.Objects
 {
-    public static class pageObjects
+    public class textBoxPageObjects
     {
-        public static By inputFullName = By.Id("userName");
-        public static By inputEmail = By.Id("userEmail");
-        public static By inputCurrentAddress = By.Id("currentAddress");
-        public static By inputPermanentAddress = By.Id("permanentAddress");
-        public static By buttonSubmit = By.Id("submit");
+        protected readonly IWebDriver driver;
+        public textBoxPageObjects(IWebDriver driver)
+        {
+            this.driver = driver;  
+        }
+        public IWebElement inputFullName => driver.FindElement(By.Id("userName"));
+        
+    }
+
+    public class checkBoxPageObjects
+    {
+        protected readonly IWebDriver driver;
+        public checkBoxPageObjects(IWebDriver driver)
+        {
+            this.driver = driver;
+        }
+        public IWebElement inputFullName => driver.FindElement(By.Id("userName"));
+
     }
 }
